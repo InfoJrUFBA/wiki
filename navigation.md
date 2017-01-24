@@ -1,5 +1,10 @@
 # InfoJr Wiki
 
+[Wordpress]()
+
+  * # Administração
+  * [Segurança](pages/wordpress/seguranca.md)
+
 [gimmick:theme (inverse: false)](slate)
 
 <script type="text/javascript">
