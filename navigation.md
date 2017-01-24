@@ -1,5 +1,9 @@
 # InfoJr Wiki
 
+[Linux]()
+
+  * [Dicas](pages/linux/dicas.md)
+
 [Wordpress]()
 
   * # Administração
