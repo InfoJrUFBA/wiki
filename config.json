@@ -1,0 +1,7 @@
+{
+    "useSideMenu": true,
+    "lineBreaks": "gfm",
+    "additionalFooterText": "Wiki feita pela <a href='http://infojr.com.br'>InfoJr UFBA</a> usando <a href='http://mdwiki.info'>MDWiki</a>",
+    "anchorCharacter": "&para;",
+    "title": "InfoJr Wiki"
+}
