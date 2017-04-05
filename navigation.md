@@ -4,6 +4,11 @@
 
   * [Dicas](pages/linux/dicas.md)
 
+[MySQL]()
+
+  * [Dicas](pages/mysql/dicas.md)
+  * [Troubleshooting](pages/mysql/erros.md)
+
 [Wordpress]()
 
   * # Administração
