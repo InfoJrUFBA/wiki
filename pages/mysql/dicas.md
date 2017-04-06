@@ -21,3 +21,18 @@ E então:
 ~~~
 $ cat delete.sql | mysql -u root -p
 ~~~
+
+Executar vários arquivos sql
+----------------------------
+
+Você pode fazer isso de várias formas, por exemplo:
+
+* Concatenar todos arquivos e executar apenas um;
+* Copiar o conteúdo, arquivo por arquivo, e ir executando;
+* Fazer um script para executar cada arquivo separado.
+
+E é exatamente o último que vai ser mostrado aqui. Basta fazer uma listagem dos arquivos sql e então um loop em cada arquivo, executando-o, veja:
+
+~~~
+$ for i in `ls *.sql`; do echo $i; mysql -u root -p < $i; done;
+~~~
