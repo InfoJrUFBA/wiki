@@ -36,3 +36,41 @@ E então é só reiniciar o serviço:
 ~~~
 $ sudo service mysql restart
 ~~~
+
+ERROR 1366 (HY000)
+------------------
+
+Saída completa do erro:
+
+~~~
+ERROR 1366 (HY000) at line 623: Incorrect string value: '\xF0\x9F\x98\x8A" ...'
+~~~
+
+Explicação:
+
+> MySQL's utf8 permits only the Unicode characters that can be represented with 3 bytes in UTF-8. Here you have a character that needs 4 bytes: \xF0\x90\x8D\x83 (U+10343 GOTHIC LETTER SAUIL).
+>
+> If you have MySQL 5.5 or later you can change the column encoding from utf8 to utf8mb4. This encoding allows storage of characters that occupy 4 bytes in UTF-8.
+>
+> You may also have to set the server property character_encoding_server to utf8mb4 in the MySQL configuration file.
+>
+> [Fonte](http://stackoverflow.com/questions/10957238/incorrect-string-value-when-trying-to-insert-utf-8-into-mysql-via-jdbc)
+
+Para resolver, como visto, só configurar o MySQL para `utf8mb4`. Para isso, edite o arquivo `/etc/mysql/my.cnf` colocando o seguinte conteúdo:
+
+~~~
+[mysql]
+default-character-set=utf8mb4
+
+[client]
+default-character-set=utf8mb4
+
+[mysqldump]
+default-character-set=utf8mb4
+~~~
+
+E então reinicie o servidor:
+
+~~~
+$ sudo service mysql restart
+~~~
