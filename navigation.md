@@ -1,5 +1,9 @@
 # InfoJr Wiki
 
+[Apache]()
+
+  * [Configuração](pages/apache/conf.md)
+
 [Linux]()
 
   * [Dicas](pages/linux/dicas.md)
