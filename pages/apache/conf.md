@@ -55,3 +55,36 @@ Depois, no `VirtualHost` necessário use a seguinte configuração:
     ServerAlias www.domain
 </VirtualHost>
 ~~~
+
+VirtualHost
+-----------
+
+Um conteúdo padrão para os arquivos de VirtualHost dos projetos é o seguinte:
+
+~~~
+<VirtualHost *:80>
+	ServerName project.infojr.com.br
+	ServerAlias www.project.infojr.com.br
+	DocumentRoot /var/www/project/
+
+	<Directory /var/www/project>
+		AllowOverride All
+		Options -Indexes
+	</Directory>
+
+	ErrorLog ${APACHE_LOG_DIR}/projects/project_error.log
+	CustomLog ${APACHE_LOG_DIR}/projects/project_access.log combined
+</VirtualHost>
+~~~
+
+Teste as configurações:
+
+~~~
+# apache2ctl configtest
+~~~
+
+Se estiver tudo `Ok`, reinicie o apache:
+
+~~~
+# service apache2 restart
+~~~
