@@ -1,8 +1,10 @@
 Dicas
 =====
 
-Substituição em massa em arquivos PHP
--------------------------------------
+Sed
+---
+
+### Substituição em massa em arquivos PHP
 
 ~~~ bash
 for i in $(find . -regextype posix-egrep -regex '.*\.php'); do 
@@ -21,6 +23,12 @@ Esse comando faz um loop em todos arquivos PHP encontrados pelo `find` e faz a s
     * `-i`: Faz as mudanças interativamente, já editando os arquivos em momento de busca
     * `s///g`: `s` é o comando de busca e substituição e `g` marca para ser feito globalmente nos arquivos
     * `<?php @eval($_POST\[.*\]);?>`: Busca o padrão `<?php @eval($_POST[]);?>` sendo que dentro do post poderia ter qualquer caractere em qualquer quantidade
+
+### Substituição com REGEX com grupos
+
+~~~
+$ sed -i 's/\(padrao\).*$/\1/' arquivo
+~~~
 
 Copiar arquivos remotamente
 ---------------------------
