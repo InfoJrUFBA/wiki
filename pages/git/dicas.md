@@ -29,3 +29,14 @@ Se quiser fazer upload de uma branch local, que se chama AAA, para o servidor ch
 ~~~
 $ git push origin AAA:BBB
 ~~~
+
+Baixar submódulos
+-----------------
+
+Para baixar submódulos basta rodar o comando:
+
+~~~
+$ git submodule update --init
+~~~
+
+Isso serve como uma forma para baixar dependências, por exemplo.
