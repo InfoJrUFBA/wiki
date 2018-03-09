@@ -36,3 +36,12 @@ E é exatamente o último que vai ser mostrado aqui. Basta fazer uma listagem do
 ~~~
 $ for i in `ls *.sql`; do echo $i; mysql -u root -p < $i; done;
 ~~~
+
+Backup de todas bases de dados
+------------------------------
+
+Precisava fazer um backup, um dump, de todas as bases de dados que existia no banco MySQL, pois bem, aqui está o script que usei e funcionou bem:
+
+~~~
+$ for db in $(mysql -u root -p'PASSWORD' -e "show databases;" | grep -v '\(mysql\|information_schema\|Database\|performance_schema\)'); do mysqldump --single-transaction -u root -p'PASSWORD' $db > $db.sql; done
+~~~
