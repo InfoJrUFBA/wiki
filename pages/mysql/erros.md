@@ -74,3 +74,22 @@ E então reinicie o servidor:
 ~~~
 $ sudo service mysql restart
 ~~~
+
+MySQLDump Error 1449
+--------------------
+
+Ao tentar fazer backup de todos os bancos me deparei com esse erro:
+
+~~~
+$ mysqldump -u root -p --all-databases > dump.sql
+Enter password:
+mysqldump: Got error: 1449: The user specified as a definer ('infoj824'@'localhost') does not exist when using LOCK TABLES
+~~~
+
+Para resolver precisei apenas rodar o comando com o parâmetro `--single-transaction`. Mais detalhes, veja na documentação do `mysqldump`.
+
+Comando que funcionou numa boa:
+
+~~~
+$ mysqldump --single-transaction -u root -p --all-databases > dump.sql
+~~~
