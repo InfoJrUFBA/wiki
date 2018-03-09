@@ -4,6 +4,10 @@
 
   * [Configuração](pages/apache/conf.md)
 
+[Git]()
+
+  * [Dicas](pages/git/dicas.md)
+
 [Linux]()
 
   * [Dicas](pages/linux/dicas.md)
