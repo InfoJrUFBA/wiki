@@ -30,8 +30,31 @@ Esse comando faz um loop em todos arquivos PHP encontrados pelo `find` e faz a s
 $ sed -i 's/\(padrao\).*$/\1/' arquivo
 ~~~
 
-Copiar arquivos remotamente
----------------------------
+SSH
+---
+
+### Acesso ao servidor
+
+Quando precisamos entrar no servidor para configurá-lo normalmente utilizaremos o protocolo/aplicação [SSH](https://pt.wikipedia.org/wiki/Secure_Shell) ([RFC4251](https://tools.ietf.org/html/rfc4251), [RFC4252](https://tools.ietf.org/html/rfc4252), [RFC4253](https://tools.ietf.org/html/rfc4253)). Para isso, precisaremos de um cliente SSH e o cliente (recomendação pessoal) depende do seu sistema operacional:
+
+* [GNU/Linux](https://linux.die.net/man/1/ssh)
+* [Windows](https://www.putty.org/)
+
+O processo de autenticação pode ser utilizando senha ou chaves SSH (para saber como criar as chaves, [clique aqui](https://infojrufba.github.io/wiki/index.html#!pages/linux/dicas.md#Gerar_chaves_SSH). Para entender melhor como funciona, [aqui](https://www.digitalocean.com/community/tutorials/understanding-the-ssh-encryption-and-connection-process)).
+
+Vamos abordar melhor sobre o cliente SSH via linha de comando no GNU/Linux. Alguns parâmetros interessantes:
+
+* `-p`: indica a porta que o servidor SSH está configurado;
+* `-l`: indica o login que deve ser utulizado para autenticar. Padrão é ser o mesmo login da máquina local;
+* `-i`: indica o endereço da chave SSH. Padrão é `~/.ssh/id_rsa`.
+
+Exemplo de comando:
+
+~~~
+$ ssh -l gildasiojunior servidor.da.infojr.com.br
+~~~
+
+### Copiar arquivos remotamente
 
 Isso é bastante útil quando se está trabalhando com servidores, seja para transferir arquivos entre sua máquina e um servidor ou entre dois servidores. É simples... Você vai usar um utilitário da suíte `ssh`, o `scp`.
 
@@ -53,3 +76,14 @@ Há alguns parâmetros interessantes, como por exemplo:
 
 * `-i`: você pode colocar o caminho para uma chave ssh que lhe dá permissão de acessar a outra máquina;
 * `-r`: copia recursivamente um diretório.
+
+### Gerar chaves SSH
+
+No GNU/Linux, para gerar uma chave SSH é bem simples. Rode o seguinte comando:
+
+~~~
+$ ssh-keygen
+~~~
+
+* Você *poderá* informar um local para salvar a chave SSH. Padrão é `~/.ssh`;
+* Você *poderá* configurar uma senha para utilização da chave.

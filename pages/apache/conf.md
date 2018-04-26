@@ -77,14 +77,12 @@ Um conteúdo padrão para os arquivos de VirtualHost dos projetos é o seguinte:
 </VirtualHost>
 ~~~
 
+Esse arquivo deve ser criado no diretório `/etc/apache2/sites-available/` com o nome do site a que diz respeito. Depois de feita a configuração, basta rodar o comando `sudo a2ensite nome_do_arquivo`.
+
 Teste as configurações:
 
 ~~~
 # apache2ctl configtest
 ~~~
 
-Se estiver tudo `Ok`, reinicie o apache:
-
-~~~
-# service apache2 restart
-~~~
+Caso esteja tudo certo, rode o comando `sudo service apache2 reload`.

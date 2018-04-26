@@ -8,6 +8,10 @@
 
   * [Dicas](pages/git/dicas.md)
 
+[Github]()
+
+  * [Dicas](pages/github/dicas.md)
+
 [Linux]()
 
   * [Dicas](pages/linux/dicas.md)
@@ -16,6 +20,11 @@
 
   * [Dicas](pages/mysql/dicas.md)
   * [Troubleshooting](pages/mysql/erros.md)
+
+[PHP]()
+
+  * [Composer](pages/php/composer.md)
+  * [Laravel](pages/php/laravel.md)
 
 [Wordpress]()
 
