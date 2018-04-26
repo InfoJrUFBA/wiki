@@ -87,3 +87,24 @@ $ ssh-keygen
 
 * Você *poderá* informar um local para salvar a chave SSH. Padrão é `~/.ssh`;
 * Você *poderá* configurar uma senha para utilização da chave.
+
+Usuários
+--------
+
+### Criar usuários
+
+~~~
+$ sudo adduser usuario
+~~~
+
+### Colocar usuário em um novo grupo
+
+~~~
+$ sudo usermod -a -G grupo usuario
+~~~
+
+Depois o usuário pode logar no grupo em uma sessão ativa (sem precisar fazer logoff) com o comando:
+
+~~~
+$ newgrp - grupo
+~~~
