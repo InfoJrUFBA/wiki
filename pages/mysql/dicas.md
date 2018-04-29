@@ -10,6 +10,7 @@ Comandos SQL úteis
 | Criar usuário | `CREATE USER 'usuario'@'local.de.acesso' IDENTIFIED BY 'senhafortedousuario'` |
 | Dar permissão ao usuário | `GRANT ALL ON bancodedados.* TO usuario@'local.de.acesso'` |
 | Exibir permissões para determinado usuário | `show grants for 'usuario'@'local.de.acesso'` |
+| Deletar usuário | `drop user 'usuario'@'local.de.acesso'` |
 | Aplicar configuração de privilégios | `flush privileges` |
 
 Apagar todos os schemas do banco de dados
