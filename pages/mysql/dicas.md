@@ -12,6 +12,7 @@ Comandos SQL úteis
 | Exibir permissões para determinado usuário | `show grants for 'usuario'@'local.de.acesso'` |
 | Deletar usuário | `drop user 'usuario'@'local.de.acesso'` |
 | Aplicar configuração de privilégios | `flush privileges` |
+| Alterar senha de um usuário | `update mysql.user set password=PASSWORD('nova_senha') where user='usuario'` |
 
 Apagar todos os schemas do banco de dados
 -----------------------------------------
